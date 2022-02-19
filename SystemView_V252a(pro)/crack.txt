@@ -1,0 +1,9 @@
+使用方法：点击菜单->Tool->License Manager=>Add License
+按照以下格式输入：
+License_SV_PRO_Cuser_M112233445566_X33_U34_V0252_#abcdabc=
+其中M后面的12个字符需要改成网卡的MAC地址。
+
+92-38-EC-DD-CD-6A
+License_SV_PRO_Cuser_M9238ECDDCD6A_X33_U34_V0252_#abcdabc=
+
+

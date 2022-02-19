@@ -1,0 +1,1849 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<device schemaVersion="1.3.5" xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_3_5.xsd">
+  <cpu>
+    <name>CA53_AARCH64</name>
+    <displayName>Cortex-A53 (AArch64)</displayName>
+    <groups>
+      <group>
+        <name>State</name>
+        <description>Current CPU State</description>
+        <IsCPUModeItem>1</IsCPUModeItem>
+      </group>
+      <group>
+        <name>AARCH64</name>
+        <groups>
+          <group>
+            <name>Core</name>
+            <description>Current State CPU Registers</description>
+            <size>64</size>
+            <access>RW</access>
+            <type>unsigned long long</type>
+            <registers>
+              <register>
+                <name>SP</name>
+                <AliasName>WSP</AliasName>
+                <description>Stack pointer (SP)</description>
+                <Index>32</Index>
+              </register>
+              <register>
+                <name>PC</name>
+                <description>Program counter (PC)</description>
+                <Index>33</Index>
+              </register>
+              <register>
+                <name>CPSR</name>
+                <description>Current program status register</description>
+                <Index>41</Index>
+                <fields>
+                  <field>
+                    <name>M</name>
+                    <description>Mode bits</description>
+                    <bitOffset>0</bitOffset>
+                    <bitWidth>4</bitWidth>
+                  </field>
+                  <field>
+                    <name>F</name>
+                    <description>FIQ interrupt mask</description>
+                    <bitOffset>6</bitOffset>
+                    <bitWidth>1</bitWidth>
+                  </field>
+                  <field>
+                    <name>I</name>
+                    <description>IRQ interrupt mask</description>
+                    <bitOffset>7</bitOffset>
+                    <bitWidth>1</bitWidth>
+                  </field>
+                  <field>
+                    <name>A</name>
+                    <description>SError interrupt mask</description>
+                    <bitOffset>8</bitOffset>
+                    <bitWidth>1</bitWidth>
+                  </field>
+                  <field>
+                    <name>E</name>
+                    <description>Data endianess</description>
+                    <bitOffset>9</bitOffset>
+                    <bitWidth>1</bitWidth>
+                  </field>
+                  <field>
+                    <name>GE</name>
+                    <description>Greater-than-or-equal flags)</description>
+                    <bitOffset>16</bitOffset>
+                    <bitWidth>4</bitWidth>
+                  </field>
+                  <field>
+                    <name>DIT</name>
+                    <description>Data independent timing</description>
+                    <bitOffset>21</bitOffset>
+                    <bitWidth>1</bitWidth>
+                  </field>
+                  <field>
+                    <name>PAN</name>
+                    <description>Privileged access never</description>
+                    <bitOffset>22</bitOffset>
+                    <bitWidth>1</bitWidth>
+                  </field>
+                  <field>
+                    <name>SSBS</name>
+                    <description>Speculative store bypass</description>
+                    <bitOffset>23</bitOffset>
+                    <bitWidth>1</bitWidth>
+                  </field>
+                  <field>
+                    <name>V</name>
+                    <description>Overflow condition flag</description>
+                    <bitOffset>28</bitOffset>
+                    <bitWidth>1</bitWidth>
+                  </field>
+                  <field>
+                    <name>C</name>
+                    <description>Carry condition flag</description>
+                    <bitOffset>29</bitOffset>
+                    <bitWidth>1</bitWidth>
+                  </field>
+                  <field>
+                    <name>Z</name>
+                    <description>Zero condition flag</description>
+                    <bitOffset>30</bitOffset>
+                    <bitWidth>1</bitWidth>
+                  </field>
+                  <field>
+                    <name>N</name>
+                    <description>Negative condition flag</description>
+                    <bitOffset>31</bitOffset>
+                    <bitWidth>1</bitWidth>
+                  </field>
+                </fields>
+              </register>
+            </registers>
+            <groups>
+              <group>
+                <name>64-bit view</name>
+                <description>Current State CPU Registers, AARCH64, 64-bit view</description>
+                <size>64</size>
+                <registers>
+                  <register>
+                    <name>X0</name>
+                    <description>General purpose register 0</description>
+                    <Index>0</Index>
+                  </register>
+                  <register>
+                    <name>X1</name>
+                    <description>General purpose register 1</description>
+                    <Index>1</Index>
+                  </register>
+                  <register>
+                    <name>X2</name>
+                    <description>General purpose register 2</description>
+                    <Index>2</Index>
+                  </register>
+                  <register>
+                    <name>X3</name>
+                    <description>General purpose register 3</description>
+                    <Index>3</Index>
+                  </register>
+                  <register>
+                    <name>X4</name>
+                    <description>General purpose register 4</description>
+                    <Index>4</Index>
+                  </register>
+                  <register>
+                    <name>X5</name>
+                    <description>General purpose register 5</description>
+                    <Index>5</Index>
+                  </register>
+                  <register>
+                    <name>X6</name>
+                    <description>General purpose register 6</description>
+                    <Index>6</Index>
+                  </register>
+                  <register>
+                    <name>X7</name>
+                    <description>General purpose register 7</description>
+                    <Index>7</Index>
+                  </register>
+                  <register>
+                    <name>X8</name>
+                    <description>General purpose register 8</description>
+                    <Index>8</Index>
+                  </register>
+                  <register>
+                    <name>X9</name>
+                    <description>General purpose register 9</description>
+                    <Index>9</Index>
+                  </register>
+                  <register>
+                    <name>X10</name>
+                    <description>General purpose register 10</description>
+                    <Index>10</Index>
+                  </register>
+                  <register>
+                    <name>X11</name>
+                    <description>General purpose register 11</description>
+                    <Index>11</Index>
+                  </register>
+                  <register>
+                    <name>X12</name>
+                    <description>General purpose register 12</description>
+                    <Index>12</Index>
+                  </register>
+                  <register>
+                    <name>X13</name>
+                    <description>General purpose register 13</description>
+                    <Index>13</Index>
+                  </register>
+                  <register>
+                    <name>X14</name>
+                    <description>General purpose register 14</description>
+                    <Index>14</Index>
+                  </register>
+                  <register>
+                    <name>X15</name>
+                    <description>General purpose register 15</description>
+                    <Index>15</Index>
+                  </register>
+                  <register>
+                    <name>X16</name>
+                    <description>General purpose register 16</description>
+                    <Index>16</Index>
+                  </register>
+                  <register>
+                    <name>X17</name>
+                    <description>General purpose register 17</description>
+                    <Index>17</Index>
+                  </register>
+                  <register>
+                    <name>X18</name>
+                    <description>General purpose register 18</description>
+                    <Index>18</Index>
+                  </register>
+                  <register>
+                    <name>X19</name>
+                    <description>General purpose register 19</description>
+                    <Index>19</Index>
+                  </register>
+                  <register>
+                    <name>X20</name>
+                    <description>General purpose register 20</description>
+                    <Index>20</Index>
+                  </register>
+                  <register>
+                    <name>X21</name>
+                    <description>General purpose register 21</description>
+                    <Index>21</Index>
+                  </register>
+                  <register>
+                    <name>X22</name>
+                    <description>General purpose register 22</description>
+                    <Index>22</Index>
+                  </register>
+                  <register>
+                    <name>X23</name>
+                    <description>General purpose register 23</description>
+                    <Index>23</Index>
+                  </register>
+                  <register>
+                    <name>X24</name>
+                    <description>General purpose register 24</description>
+                    <Index>24</Index>
+                  </register>
+                  <register>
+                    <name>X25</name>
+                    <description>General purpose register 25</description>
+                    <Index>25</Index>
+                  </register>
+                  <register>
+                    <name>X26</name>
+                    <description>General purpose register 26</description>
+                    <Index>26</Index>
+                  </register>
+                  <register>
+                    <name>X27</name>
+                    <description>General purpose register 27</description>
+                    <Index>27</Index>
+                  </register>
+                  <register>
+                    <name>X28</name>
+                    <description>General purpose register 28</description>
+                    <Index>28</Index>
+                  </register>
+                  <register>
+                    <name>X29</name>
+                    <description>General purpose register 29</description>
+                    <Index>29</Index>
+                  </register>
+                  <register>
+                    <name>X30</name>
+                    <description>Procedure link register</description>
+                    <Index>30</Index>
+                  </register>
+                  <register>
+                    <name>XZR</name>
+                    <AliasName>WZR</AliasName>
+                    <access>read-only</access>
+                    <description>Zero register</description>
+                    <Index>31</Index>
+                  </register>
+                </registers>
+              </group>
+              <group>
+                <name>32-bit view</name>
+                <description>Current State CPU Registers, AARCH64, 32-bit view</description>
+                <size>32</size>
+                <registers>
+                  <register>
+                    <name>W0</name>
+                    <description>General purpose register 0</description>
+                    <Index>0</Index>
+                  </register>
+                  <register>
+                    <name>W1</name>
+                    <description>General purpose register 1</description>
+                    <Index>1</Index>
+                  </register>
+                  <register>
+                    <name>W2</name>
+                    <description>General purpose register 2</description>
+                    <Index>2</Index>
+                  </register>
+                  <register>
+                    <name>W3</name>
+                    <description>General purpose register 3</description>
+                    <Index>3</Index>
+                  </register>
+                  <register>
+                    <name>W4</name>
+                    <description>General purpose register 4</description>
+                    <Index>4</Index>
+                  </register>
+                  <register>
+                    <name>W5</name>
+                    <description>General purpose register 5</description>
+                    <Index>5</Index>
+                  </register>
+                  <register>
+                    <name>W6</name>
+                    <description>General purpose register 6</description>
+                    <Index>6</Index>
+                  </register>
+                  <register>
+                    <name>W7</name>
+                    <description>General purpose register 7</description>
+                    <Index>7</Index>
+                  </register>
+                  <register>
+                    <name>W8</name>
+                    <description>General purpose register 8</description>
+                    <Index>8</Index>
+                  </register>
+                  <register>
+                    <name>W9</name>
+                    <description>General purpose register 9</description>
+                    <Index>9</Index>
+                  </register>
+                  <register>
+                    <name>W10</name>
+                    <description>General purpose register 10</description>
+                    <Index>10</Index>
+                  </register>
+                  <register>
+                    <name>W11</name>
+                    <description>General purpose register 11</description>
+                    <Index>11</Index>
+                  </register>
+                  <register>
+                    <name>W12</name>
+                    <description>General purpose register 12</description>
+                    <Index>12</Index>
+                  </register>
+                  <register>
+                    <name>W13</name>
+                    <description>General purpose register 13</description>
+                    <Index>13</Index>
+                  </register>
+                  <register>
+                    <name>W14</name>
+                    <description>General purpose register 14</description>
+                    <Index>14</Index>
+                  </register>
+                  <register>
+                    <name>W15</name>
+                    <description>General purpose register 15</description>
+                    <Index>15</Index>
+                  </register>
+                  <register>
+                    <name>W16</name>
+                    <description>General purpose register 16</description>
+                    <Index>16</Index>
+                  </register>
+                  <register>
+                    <name>W17</name>
+                    <description>General purpose register 17</description>
+                    <Index>17</Index>
+                  </register>
+                  <register>
+                    <name>W18</name>
+                    <description>General purpose register 18</description>
+                    <Index>18</Index>
+                  </register>
+                  <register>
+                    <name>W19</name>
+                    <description>General purpose register 19</description>
+                    <Index>19</Index>
+                  </register>
+                  <register>
+                    <name>W20</name>
+                    <description>General purpose register 20</description>
+                    <Index>20</Index>
+                  </register>
+                  <register>
+                    <name>W21</name>
+                    <description>General purpose register 21</description>
+                    <Index>21</Index>
+                  </register>
+                  <register>
+                    <name>W22</name>
+                    <description>General purpose register 22</description>
+                    <Index>22</Index>
+                  </register>
+                  <register>
+                    <name>W23</name>
+                    <description>General purpose register 23</description>
+                    <Index>23</Index>
+                  </register>
+                  <register>
+                    <name>W24</name>
+                    <description>General purpose register 24</description>
+                    <Index>24</Index>
+                  </register>
+                  <register>
+                    <name>W25</name>
+                    <description>General purpose register 25</description>
+                    <Index>25</Index>
+                  </register>
+                  <register>
+                    <name>W26</name>
+                    <description>General purpose register 26</description>
+                    <Index>26</Index>
+                  </register>
+                  <register>
+                    <name>W27</name>
+                    <description>General purpose register 27</description>
+                    <Index>27</Index>
+                  </register>
+                  <register>
+                    <name>W28</name>
+                    <description>General purpose register 28</description>
+                    <Index>28</Index>
+                  </register>
+                  <register>
+                    <name>W29</name>
+                    <description>General purpose register 29</description>
+                    <Index>29</Index>
+                  </register>
+                  <register>
+                    <name>W30</name>
+                    <description>Procedure link register</description>
+                    <Index>30</Index>
+                  </register>
+                </registers>
+              </group>
+              <group>
+                <name>Banked Registers</name>
+                <description>Mode & Status Registers, AARCH64</description>
+                <size>64</size>
+                <registers>
+                  <register>
+                    <name>ELR_EL1</name>
+                    <description>Link register (Exception Level 1)</description>
+                    <Index>34</Index>
+                  </register>
+                  <register>
+                    <name>ELR_EL2</name>
+                    <description>Link register (Exception Level 2)</description>
+                    <Index>35</Index>
+                  </register>
+                  <register>
+                    <name>ELR_EL3</name>
+                    <description>Link register (Exception Level 3)</description>
+                    <Index>36</Index>
+                  </register>
+                  <register>
+                    <name>SP_EL0</name>
+                    <description>Stack pointer (Exception Level 0)</description>
+                    <Index>37</Index>
+                  </register>
+                  <register>
+                    <name>SP_EL1</name>
+                    <description>Stack pointer (Exception Level 1)</description>
+                    <Index>38</Index>
+                  </register>
+                  <register>
+                    <name>SP_EL2</name>
+                    <description>Stack pointer (Exception Level 2)</description>
+                    <Index>39</Index>
+                  </register>
+                  <register>
+                    <name>SPSR_ABT</name>
+                    <description>Current program status register (Abort Mode)</description>
+                    <Index>42</Index>
+                    <fields>
+                      <field>
+                        <name>M</name>
+                        <description>Mode bits</description>
+                        <bitOffset>0</bitOffset>
+                        <bitWidth>5</bitWidth>
+                      </field>
+                      <field>
+                        <name>T</name>
+                        <description>T32 instruction set state</description>
+                        <bitOffset>5</bitOffset>
+                        <bitWidth>1</bitWidth>
+                      </field>
+                      <field>
+                        <name>F</name>
+                        <description>FIQ interrupt mask</description>
+                        <bitOffset>6</bitOffset>
+                        <bitWidth>1</bitWidth>
+                      </field>
+                      <field>
+                        <name>I</name>
+                        <description>IRQ interrupt mask</description>
+                        <bitOffset>7</bitOffset>
+                        <bitWidth>1</bitWidth>
+                      </field>
+                      <field>
+                        <name>A</name>
+                        <description>SError interrupt mask</description>
+                        <bitOffset>8</bitOffset>
+                        <bitWidth>1</bitWidth>
+                      </field>
+                      <field>
+                        <name>E</name>
+                        <description>Data endianess</description>
+                        <bitOffset>9</bitOffset>
+                        <bitWidth>1</bitWidth>
+                      </field>
+                      <field>
+                        <name>IT Low</name>
+                        <description>If-then flags (lower side)</description>
+                        <bitOffset>10</bitOffset>
+                        <bitWidth>6</bitWidth>
+                      </field>
+                      <field>
+                        <name>IT High</name>
+                        <description>If-then flags (higher side)</description>
+                        <bitOffset>25</bitOffset>
+                        <bitWidth>2</bitWidth>
+                      </field>
+                      <field>
+                        <name>GE</name>
+                        <description>Greater-than-or-equal flags)</description>
+                        <bitOffset>16</bitOffset>
+                        <bitWidth>4</bitWidth>
+                      </field>
+                      <field>
+                        <name>IL</name>
+                        <description>Illegal execution state</description>
+                        <bitOffset>20</bitOffset>
+                        <bitWidth>1</bitWidth>
+                      </field>
+                      <field>
+                        <name>DIT</name>
+                        <description>Data independent timing</description>
+                        <bitOffset>21</bitOffset>
+                        <bitWidth>1</bitWidth>
+                      </field>
+                      <field>
+                        <name>PAN</name>
+                        <description>Privileged access never</description>
+                        <bitOffset>22</bitOffset>
+                        <bitWidth>1</bitWidth>
+                      </field>
+                      <field>
+                        <name>SSBS</name>
+                        <description>Speculative store bypass</description>
+                        <bitOffset>23</bitOffset>
+                        <bitWidth>1</bitWidth>
+                      </field>
+                      <field>
+                        <name>J</name>
+                        <description>Instruction set state</description>
+                        <bitOffset>24</bitOffset>
+                        <bitWidth>1</bitWidth>
+                      </field>
+                      <field>
+                        <name>Q</name>
+                        <description>Overflow or saturation flag</description>
+                        <bitOffset>27</bitOffset>
+                        <bitWidth>1</bitWidth>
+                      </field>
+                      <field>
+                        <name>V</name>
+                        <description>Overflow condition flag</description>
+                        <bitOffset>28</bitOffset>
+                        <bitWidth>1</bitWidth>
+                      </field>
+                      <field>
+                        <name>C</name>
+                        <description>Carry condition flag</description>
+                        <bitOffset>29</bitOffset>
+                        <bitWidth>1</bitWidth>
+                      </field>
+                      <field>
+                        <name>Z</name>
+                        <description>Zero condition flag</description>
+                        <bitOffset>30</bitOffset>
+                        <bitWidth>1</bitWidth>
+                      </field>
+                      <field>
+                        <name>N</name>
+                        <description>Negative condition flag</description>
+                        <bitOffset>31</bitOffset>
+                        <bitWidth>1</bitWidth>
+                      </field>
+                    </fields>
+                  </register>
+                  <register>
+                    <name>SPSR_EL1</name>
+                    <description>Current program status register (Exception Level 1)</description>
+                    <Index>43</Index>
+                    <fields>
+                      <field>
+                        <name>M</name>
+                        <description>Mode bits</description>
+                        <bitOffset>0</bitOffset>
+                        <bitWidth>5</bitWidth>
+                      </field>
+                      <field>
+                        <name>T</name>
+                        <description>T32 instruction set state</description>
+                        <bitOffset>5</bitOffset>
+                        <bitWidth>1</bitWidth>
+                      </field>
+                      <field>
+                        <name>F</name>
+                        <description>FIQ interrupt mask</description>
+                        <bitOffset>6</bitOffset>
+                        <bitWidth>1</bitWidth>
+                      </field>
+                      <field>
+                        <name>I</name>
+                        <description>IRQ interrupt mask</description>
+                        <bitOffset>7</bitOffset>
+                        <bitWidth>1</bitWidth>
+                      </field>
+                      <field>
+                        <name>A</name>
+                        <description>SError interrupt mask</description>
+                        <bitOffset>8</bitOffset>
+                        <bitWidth>1</bitWidth>
+                      </field>
+                      <field>
+                        <name>E</name>
+                        <description>Data endianess</description>
+                        <bitOffset>9</bitOffset>
+                        <bitWidth>1</bitWidth>
+                      </field>
+                      <field>
+                        <name>IT Low</name>
+                        <description>If-then flags (lower side)</description>
+                        <bitOffset>10</bitOffset>
+                        <bitWidth>6</bitWidth>
+                      </field>
+                      <field>
+                        <name>IT High</name>
+                        <description>If-then flags (higher side)</description>
+                        <bitOffset>25</bitOffset>
+                        <bitWidth>2</bitWidth>
+                      </field>
+                      <field>
+                        <name>GE</name>
+                        <description>Greater-than-or-equal flags)</description>
+                        <bitOffset>16</bitOffset>
+                        <bitWidth>4</bitWidth>
+                      </field>
+                      <field>
+                        <name>IL</name>
+                        <description>Illegal execution state</description>
+                        <bitOffset>20</bitOffset>
+                        <bitWidth>1</bitWidth>
+                      </field>
+                      <field>
+                        <name>SS</name>
+                        <description>Software Step</description>
+                        <bitOffset>21</bitOffset>
+                        <bitWidth>1</bitWidth>
+                      </field>
+                      <field>
+                        <name>PAN</name>
+                        <description>Privileged access never</description>
+                        <bitOffset>22</bitOffset>
+                        <bitWidth>1</bitWidth>
+                      </field>
+                      <field>
+                        <name>SSBS</name>
+                        <description>Speculative store bypass</description>
+                        <bitOffset>23</bitOffset>
+                        <bitWidth>1</bitWidth>
+                      </field>
+                      <field>
+                        <name>DIT</name>
+                        <description>Data independent timing</description>
+                        <bitOffset>24</bitOffset>
+                        <bitWidth>1</bitWidth>
+                      </field>
+                      <field>
+                        <name>V</name>
+                        <description>Overflow condition flag</description>
+                        <bitOffset>28</bitOffset>
+                        <bitWidth>1</bitWidth>
+                      </field>
+                      <field>
+                        <name>C</name>
+                        <description>Carry condition flag</description>
+                        <bitOffset>29</bitOffset>
+                        <bitWidth>1</bitWidth>
+                      </field>
+                      <field>
+                        <name>Z</name>
+                        <description>Zero condition flag</description>
+                        <bitOffset>30</bitOffset>
+                        <bitWidth>1</bitWidth>
+                      </field>
+                      <field>
+                        <name>N</name>
+                        <description>Negative condition flag</description>
+                        <bitOffset>31</bitOffset>
+                        <bitWidth>1</bitWidth>
+                      </field>
+                    </fields>
+                  </register>
+                  <register>
+                    <name>SPSR_EL2</name>
+                    <description>Current program status register (Exception Level 2)</description>
+                    <Index>44</Index>
+                    <fields>
+                      <field>
+                        <name>M</name>
+                        <description>Mode bits</description>
+                        <bitOffset>0</bitOffset>
+                        <bitWidth>5</bitWidth>
+                      </field>
+                      <field>
+                        <name>T</name>
+                        <description>T32 instruction set state</description>
+                        <bitOffset>5</bitOffset>
+                        <bitWidth>1</bitWidth>
+                      </field>
+                      <field>
+                        <name>F</name>
+                        <description>FIQ interrupt mask</description>
+                        <bitOffset>6</bitOffset>
+                        <bitWidth>1</bitWidth>
+                      </field>
+                      <field>
+                        <name>I</name>
+                        <description>IRQ interrupt mask</description>
+                        <bitOffset>7</bitOffset>
+                        <bitWidth>1</bitWidth>
+                      </field>
+                      <field>
+                        <name>A</name>
+                        <description>SError interrupt mask</description>
+                        <bitOffset>8</bitOffset>
+                        <bitWidth>1</bitWidth>
+                      </field>
+                      <field>
+                        <name>E</name>
+                        <description>Data endianess</description>
+                        <bitOffset>9</bitOffset>
+                        <bitWidth>1</bitWidth>
+                      </field>
+                      <field>
+                        <name>IT Low</name>
+                        <description>If-then flags (lower side)</description>
+                        <bitOffset>10</bitOffset>
+                        <bitWidth>6</bitWidth>
+                      </field>
+                      <field>
+                        <name>IT High</name>
+                        <description>If-then flags (higher side)</description>
+                        <bitOffset>25</bitOffset>
+                        <bitWidth>2</bitWidth>
+                      </field>
+                      <field>
+                        <name>GE</name>
+                        <description>Greater-than-or-equal flags)</description>
+                        <bitOffset>16</bitOffset>
+                        <bitWidth>4</bitWidth>
+                      </field>
+                      <field>
+                        <name>IL</name>
+                        <description>Illegal execution state</description>
+                        <bitOffset>20</bitOffset>
+                        <bitWidth>1</bitWidth>
+                      </field>
+                      <field>
+                        <name>SS</name>
+                        <description>Software Step</description>
+                        <bitOffset>21</bitOffset>
+                        <bitWidth>1</bitWidth>
+                      </field>
+                      <field>
+                        <name>PAN</name>
+                        <description>Privileged access never</description>
+                        <bitOffset>22</bitOffset>
+                        <bitWidth>1</bitWidth>
+                      </field>
+                      <field>
+                        <name>SSBS</name>
+                        <description>Speculative store bypass</description>
+                        <bitOffset>23</bitOffset>
+                        <bitWidth>1</bitWidth>
+                      </field>
+                      <field>
+                        <name>DIT</name>
+                        <description>Data independent timing</description>
+                        <bitOffset>24</bitOffset>
+                        <bitWidth>1</bitWidth>
+                      </field>
+                      <field>
+                        <name>V</name>
+                        <description>Overflow condition flag</description>
+                        <bitOffset>28</bitOffset>
+                        <bitWidth>1</bitWidth>
+                      </field>
+                      <field>
+                        <name>C</name>
+                        <description>Carry condition flag</description>
+                        <bitOffset>29</bitOffset>
+                        <bitWidth>1</bitWidth>
+                      </field>
+                      <field>
+                        <name>Z</name>
+                        <description>Zero condition flag</description>
+                        <bitOffset>30</bitOffset>
+                        <bitWidth>1</bitWidth>
+                      </field>
+                      <field>
+                        <name>N</name>
+                        <description>Negative condition flag</description>
+                        <bitOffset>31</bitOffset>
+                        <bitWidth>1</bitWidth>
+                      </field>
+                    </fields>
+                  </register>
+                  <register>
+                    <name>SPSR_EL3</name>
+                    <description>Current program status register (Exception Level 3)</description>
+                    <Index>45</Index>
+                    <fields>
+                      <field>
+                        <name>M</name>
+                        <description>Mode bits</description>
+                        <bitOffset>0</bitOffset>
+                        <bitWidth>5</bitWidth>
+                      </field>
+                      <field>
+                        <name>T</name>
+                        <description>T32 instruction set state</description>
+                        <bitOffset>5</bitOffset>
+                        <bitWidth>1</bitWidth>
+                      </field>
+                      <field>
+                        <name>F</name>
+                        <description>FIQ interrupt mask</description>
+                        <bitOffset>6</bitOffset>
+                        <bitWidth>1</bitWidth>
+                      </field>
+                      <field>
+                        <name>I</name>
+                        <description>IRQ interrupt mask</description>
+                        <bitOffset>7</bitOffset>
+                        <bitWidth>1</bitWidth>
+                      </field>
+                      <field>
+                        <name>A</name>
+                        <description>SError interrupt mask</description>
+                        <bitOffset>8</bitOffset>
+                        <bitWidth>1</bitWidth>
+                      </field>
+                      <field>
+                        <name>E</name>
+                        <description>Data endianess</description>
+                        <bitOffset>9</bitOffset>
+                        <bitWidth>1</bitWidth>
+                      </field>
+                      <field>
+                        <name>IT Low</name>
+                        <description>If-then flags (lower side)</description>
+                        <bitOffset>10</bitOffset>
+                        <bitWidth>6</bitWidth>
+                      </field>
+                      <field>
+                        <name>IT High</name>
+                        <description>If-then flags (higher side)</description>
+                        <bitOffset>25</bitOffset>
+                        <bitWidth>2</bitWidth>
+                      </field>
+                      <field>
+                        <name>GE</name>
+                        <description>Greater-than-or-equal flags)</description>
+                        <bitOffset>16</bitOffset>
+                        <bitWidth>4</bitWidth>
+                      </field>
+                      <field>
+                        <name>IL</name>
+                        <description>Illegal execution state</description>
+                        <bitOffset>20</bitOffset>
+                        <bitWidth>1</bitWidth>
+                      </field>
+                      <field>
+                        <name>SS</name>
+                        <description>Software Step</description>
+                        <bitOffset>21</bitOffset>
+                        <bitWidth>1</bitWidth>
+                      </field>
+                      <field>
+                        <name>PAN</name>
+                        <description>Privileged access never</description>
+                        <bitOffset>22</bitOffset>
+                        <bitWidth>1</bitWidth>
+                      </field>
+                      <field>
+                        <name>SSBS</name>
+                        <description>Speculative store bypass</description>
+                        <bitOffset>23</bitOffset>
+                        <bitWidth>1</bitWidth>
+                      </field>
+                      <field>
+                        <name>DIT</name>
+                        <description>Data independent timing</description>
+                        <bitOffset>24</bitOffset>
+                        <bitWidth>1</bitWidth>
+                      </field>
+                      <field>
+                        <name>V</name>
+                        <description>Overflow condition flag</description>
+                        <bitOffset>28</bitOffset>
+                        <bitWidth>1</bitWidth>
+                      </field>
+                      <field>
+                        <name>C</name>
+                        <description>Carry condition flag</description>
+                        <bitOffset>29</bitOffset>
+                        <bitWidth>1</bitWidth>
+                      </field>
+                      <field>
+                        <name>Z</name>
+                        <description>Zero condition flag</description>
+                        <bitOffset>30</bitOffset>
+                        <bitWidth>1</bitWidth>
+                      </field>
+                      <field>
+                        <name>N</name>
+                        <description>Negative condition flag</description>
+                        <bitOffset>31</bitOffset>
+                        <bitWidth>1</bitWidth>
+                      </field>
+                    </fields>
+                  </register>
+                  <register>
+                    <name>SPSR_FIQ</name>
+                    <description>Current program status register (Fast Interrupt Mode)</description>
+                    <Index>46</Index>
+                    <fields>
+                      <field>
+                        <name>M</name>
+                        <description>Mode bits</description>
+                        <bitOffset>0</bitOffset>
+                        <bitWidth>5</bitWidth>
+                      </field>
+                      <field>
+                        <name>T</name>
+                        <description>T32 instruction set state</description>
+                        <bitOffset>5</bitOffset>
+                        <bitWidth>1</bitWidth>
+                      </field>
+                      <field>
+                        <name>F</name>
+                        <description>FIQ interrupt mask</description>
+                        <bitOffset>6</bitOffset>
+                        <bitWidth>1</bitWidth>
+                      </field>
+                      <field>
+                        <name>I</name>
+                        <description>IRQ interrupt mask</description>
+                        <bitOffset>7</bitOffset>
+                        <bitWidth>1</bitWidth>
+                      </field>
+                      <field>
+                        <name>A</name>
+                        <description>SError interrupt mask</description>
+                        <bitOffset>8</bitOffset>
+                        <bitWidth>1</bitWidth>
+                      </field>
+                      <field>
+                        <name>E</name>
+                        <description>Data endianess</description>
+                        <bitOffset>9</bitOffset>
+                        <bitWidth>1</bitWidth>
+                      </field>
+                      <field>
+                        <name>IT Low</name>
+                        <description>If-then flags (lower side)</description>
+                        <bitOffset>10</bitOffset>
+                        <bitWidth>6</bitWidth>
+                      </field>
+                      <field>
+                        <name>IT High</name>
+                        <description>If-then flags (higher side)</description>
+                        <bitOffset>25</bitOffset>
+                        <bitWidth>2</bitWidth>
+                      </field>
+                      <field>
+                        <name>GE</name>
+                        <description>Greater-than-or-equal flags)</description>
+                        <bitOffset>16</bitOffset>
+                        <bitWidth>4</bitWidth>
+                      </field>
+                      <field>
+                        <name>IL</name>
+                        <description>Illegal execution state</description>
+                        <bitOffset>20</bitOffset>
+                        <bitWidth>1</bitWidth>
+                      </field>
+                      <field>
+                        <name>DIT</name>
+                        <description>Data independent timing</description>
+                        <bitOffset>21</bitOffset>
+                        <bitWidth>1</bitWidth>
+                      </field>
+                      <field>
+                        <name>PAN</name>
+                        <description>Privileged access never</description>
+                        <bitOffset>22</bitOffset>
+                        <bitWidth>1</bitWidth>
+                      </field>
+                      <field>
+                        <name>SSBS</name>
+                        <description>Speculative store bypass</description>
+                        <bitOffset>23</bitOffset>
+                        <bitWidth>1</bitWidth>
+                      </field>
+                      <field>
+                        <name>J</name>
+                        <description>Instruction set state</description>
+                        <bitOffset>24</bitOffset>
+                        <bitWidth>1</bitWidth>
+                      </field>
+                      <field>
+                        <name>Q</name>
+                        <description>Overflow or saturation flag</description>
+                        <bitOffset>27</bitOffset>
+                        <bitWidth>1</bitWidth>
+                      </field>
+                      <field>
+                        <name>V</name>
+                        <description>Overflow condition flag</description>
+                        <bitOffset>28</bitOffset>
+                        <bitWidth>1</bitWidth>
+                      </field>
+                      <field>
+                        <name>C</name>
+                        <description>Carry condition flag</description>
+                        <bitOffset>29</bitOffset>
+                        <bitWidth>1</bitWidth>
+                      </field>
+                      <field>
+                        <name>Z</name>
+                        <description>Zero condition flag</description>
+                        <bitOffset>30</bitOffset>
+                        <bitWidth>1</bitWidth>
+                      </field>
+                      <field>
+                        <name>N</name>
+                        <description>Negative condition flag</description>
+                        <bitOffset>31</bitOffset>
+                        <bitWidth>1</bitWidth>
+                      </field>
+                    </fields>
+                  </register>
+                  <register>
+                    <name>SPSR_IRQ</name>
+                    <description>Current program status register (Interrupt Mode)</description>
+                    <Index>47</Index>
+                    <fields>
+                      <field>
+                        <name>M</name>
+                        <description>Mode bits</description>
+                        <bitOffset>0</bitOffset>
+                        <bitWidth>5</bitWidth>
+                      </field>
+                      <field>
+                        <name>T</name>
+                        <description>T32 instruction set state</description>
+                        <bitOffset>5</bitOffset>
+                        <bitWidth>1</bitWidth>
+                      </field>
+                      <field>
+                        <name>F</name>
+                        <description>FIQ interrupt mask</description>
+                        <bitOffset>6</bitOffset>
+                        <bitWidth>1</bitWidth>
+                      </field>
+                      <field>
+                        <name>I</name>
+                        <description>IRQ interrupt mask</description>
+                        <bitOffset>7</bitOffset>
+                        <bitWidth>1</bitWidth>
+                      </field>
+                      <field>
+                        <name>A</name>
+                        <description>SError interrupt mask</description>
+                        <bitOffset>8</bitOffset>
+                        <bitWidth>1</bitWidth>
+                      </field>
+                      <field>
+                        <name>E</name>
+                        <description>Data endianess</description>
+                        <bitOffset>9</bitOffset>
+                        <bitWidth>1</bitWidth>
+                      </field>
+                      <field>
+                        <name>IT Low</name>
+                        <description>If-then flags (lower side)</description>
+                        <bitOffset>10</bitOffset>
+                        <bitWidth>6</bitWidth>
+                      </field>
+                      <field>
+                        <name>IT High</name>
+                        <description>If-then flags (higher side)</description>
+                        <bitOffset>25</bitOffset>
+                        <bitWidth>2</bitWidth>
+                      </field>
+                      <field>
+                        <name>GE</name>
+                        <description>Greater-than-or-equal flags)</description>
+                        <bitOffset>16</bitOffset>
+                        <bitWidth>4</bitWidth>
+                      </field>
+                      <field>
+                        <name>IL</name>
+                        <description>Illegal execution state</description>
+                        <bitOffset>20</bitOffset>
+                        <bitWidth>1</bitWidth>
+                      </field>
+                      <field>
+                        <name>DIT</name>
+                        <description>Data independent timing</description>
+                        <bitOffset>21</bitOffset>
+                        <bitWidth>1</bitWidth>
+                      </field>
+                      <field>
+                        <name>PAN</name>
+                        <description>Privileged access never</description>
+                        <bitOffset>22</bitOffset>
+                        <bitWidth>1</bitWidth>
+                      </field>
+                      <field>
+                        <name>SSBS</name>
+                        <description>Speculative store bypass</description>
+                        <bitOffset>23</bitOffset>
+                        <bitWidth>1</bitWidth>
+                      </field>
+                      <field>
+                        <name>J</name>
+                        <description>Instruction set state</description>
+                        <bitOffset>24</bitOffset>
+                        <bitWidth>1</bitWidth>
+                      </field>
+                      <field>
+                        <name>Q</name>
+                        <description>Overflow or saturation flag</description>
+                        <bitOffset>27</bitOffset>
+                        <bitWidth>1</bitWidth>
+                      </field>
+                      <field>
+                        <name>V</name>
+                        <description>Overflow condition flag</description>
+                        <bitOffset>28</bitOffset>
+                        <bitWidth>1</bitWidth>
+                      </field>
+                      <field>
+                        <name>C</name>
+                        <description>Carry condition flag</description>
+                        <bitOffset>29</bitOffset>
+                        <bitWidth>1</bitWidth>
+                      </field>
+                      <field>
+                        <name>Z</name>
+                        <description>Zero condition flag</description>
+                        <bitOffset>30</bitOffset>
+                        <bitWidth>1</bitWidth>
+                      </field>
+                      <field>
+                        <name>N</name>
+                        <description>Negative condition flag</description>
+                        <bitOffset>31</bitOffset>
+                        <bitWidth>1</bitWidth>
+                      </field>
+                    </fields>
+                  </register>
+                  <register>
+                    <name>SPSR_UND</name>
+                    <description>Current program status register (Undefined Mode)</description>
+                    <Index>48</Index>
+                    <fields>
+                      <field>
+                        <name>M</name>
+                        <description>Mode bits</description>
+                        <bitOffset>0</bitOffset>
+                        <bitWidth>5</bitWidth>
+                      </field>
+                      <field>
+                        <name>T</name>
+                        <description>T32 instruction set state</description>
+                        <bitOffset>5</bitOffset>
+                        <bitWidth>1</bitWidth>
+                      </field>
+                      <field>
+                        <name>F</name>
+                        <description>FIQ interrupt mask</description>
+                        <bitOffset>6</bitOffset>
+                        <bitWidth>1</bitWidth>
+                      </field>
+                      <field>
+                        <name>I</name>
+                        <description>IRQ interrupt mask</description>
+                        <bitOffset>7</bitOffset>
+                        <bitWidth>1</bitWidth>
+                      </field>
+                      <field>
+                        <name>A</name>
+                        <description>SError interrupt mask</description>
+                        <bitOffset>8</bitOffset>
+                        <bitWidth>1</bitWidth>
+                      </field>
+                      <field>
+                        <name>E</name>
+                        <description>Data endianess</description>
+                        <bitOffset>9</bitOffset>
+                        <bitWidth>1</bitWidth>
+                      </field>
+                      <field>
+                        <name>IT Low</name>
+                        <description>If-then flags (lower side)</description>
+                        <bitOffset>10</bitOffset>
+                        <bitWidth>6</bitWidth>
+                      </field>
+                      <field>
+                        <name>IT High</name>
+                        <description>If-then flags (higher side)</description>
+                        <bitOffset>25</bitOffset>
+                        <bitWidth>2</bitWidth>
+                      </field>
+                      <field>
+                        <name>GE</name>
+                        <description>Greater-than-or-equal flags)</description>
+                        <bitOffset>16</bitOffset>
+                        <bitWidth>4</bitWidth>
+                      </field>
+                      <field>
+                        <name>IL</name>
+                        <description>Illegal execution state</description>
+                        <bitOffset>20</bitOffset>
+                        <bitWidth>1</bitWidth>
+                      </field>
+                      <field>
+                        <name>DIT</name>
+                        <description>Data independent timing</description>
+                        <bitOffset>21</bitOffset>
+                        <bitWidth>1</bitWidth>
+                      </field>
+                      <field>
+                        <name>PAN</name>
+                        <description>Privileged access never</description>
+                        <bitOffset>22</bitOffset>
+                        <bitWidth>1</bitWidth>
+                      </field>
+                      <field>
+                        <name>SSBS</name>
+                        <description>Speculative store bypass</description>
+                        <bitOffset>23</bitOffset>
+                        <bitWidth>1</bitWidth>
+                      </field>
+                      <field>
+                        <name>J</name>
+                        <description>Instruction set state</description>
+                        <bitOffset>24</bitOffset>
+                        <bitWidth>1</bitWidth>
+                      </field>
+                      <field>
+                        <name>Q</name>
+                        <description>Overflow or saturation flag</description>
+                        <bitOffset>27</bitOffset>
+                        <bitWidth>1</bitWidth>
+                      </field>
+                      <field>
+                        <name>V</name>
+                        <description>Overflow condition flag</description>
+                        <bitOffset>28</bitOffset>
+                        <bitWidth>1</bitWidth>
+                      </field>
+                      <field>
+                        <name>C</name>
+                        <description>Carry condition flag</description>
+                        <bitOffset>29</bitOffset>
+                        <bitWidth>1</bitWidth>
+                      </field>
+                      <field>
+                        <name>Z</name>
+                        <description>Zero condition flag</description>
+                        <bitOffset>30</bitOffset>
+                        <bitWidth>1</bitWidth>
+                      </field>
+                      <field>
+                        <name>N</name>
+                        <description>Negative condition flag</description>
+                        <bitOffset>31</bitOffset>
+                        <bitWidth>1</bitWidth>
+                      </field>
+                    </fields>
+                  </register>
+                </register>
+              </group>
+            </groups>
+          </group>
+          <group>
+            <name>FPU</name>
+            <description>Floating Point Unit Registers</description>
+            <size>64</size>
+            <access>RW</access>
+            <type>unsigned long long</type>
+            <registers>
+              <register>
+                <name>FPCR</name>
+                <description>Floating point control register</description>
+                <Index>49</Index>
+                <fields>
+                  <field>
+                    <name>FIZ</name>
+                    <description>Flush Inputs to Zero</description>
+                    <bitOffset>0</bitOffset>
+                    <bitWidth>1</bitWidth>
+                  </field>
+                  <field>
+                    <name>AH</name>
+                    <description>Alternate Handling</description>
+                    <bitOffset>1</bitOffset>
+                    <bitWidth>1</bitWidth>
+                  </field>
+                  <field>
+                    <name>NEP</name>
+                    <description>SIMD output element control</description>
+                    <bitOffset>2</bitOffset>
+                    <bitWidth>1</bitWidth>
+                  </field>
+                  <field>
+                    <name>IOE</name>
+                    <description>Invalid Operation FP exception enable</description>
+                    <bitOffset>8</bitOffset>
+                    <bitWidth>1</bitWidth>
+                  </field>
+                  <field>
+                    <name>DZE</name>
+                    <description>Divide by Zero FP exception enable</description>
+                    <bitOffset>9</bitOffset>
+                    <bitWidth>1</bitWidth>
+                  </field>
+                  <field>
+                    <name>OFE</name>
+                    <description>Overflow FP exception enable</description>
+                    <bitOffset>10</bitOffset>
+                    <bitWidth>1</bitWidth>
+                  </field>
+                  <field>
+                    <name>UFE</name>
+                    <description>Underflow FP exception enable</description>
+                    <bitOffset>11</bitOffset>
+                    <bitWidth>1</bitWidth>
+                  </field>
+                  <field>
+                    <name>IXE</name>
+                    <description>Inexact FP exception enable</description>
+                    <bitOffset>12</bitOffset>
+                    <bitWidth>1</bitWidth>
+                  </field>
+                  <field>
+                    <name>IDE</name>
+                    <description>Input Denormal FP exception enable</description>
+                    <bitOffset>15</bitOffset>
+                    <bitWidth>1</bitWidth>
+                  </field>
+                  <field>
+                    <name>Len</name>
+                    <description>Len (AARCH32 only)</description>
+                    <bitOffset>16</bitOffset>
+                    <bitWidth>3</bitWidth>
+                  </field>
+                  <field>
+                    <name>FZ16</name>
+                    <description>Flushing denormalized numbers to zero control bit</description>
+                    <bitOffset>19</bitOffset>
+                    <bitWidth>1</bitWidth>
+                  </field>
+                  <field>
+                    <name>Stride</name>
+                    <description>Stride (AARCH32 only)</description>
+                    <bitOffset>20</bitOffset>
+                    <bitWidth>2</bitWidth>
+                  </field>
+                  <field>
+                    <name>RMode</name>
+                    <description>Rounding Mode</description>
+                    <bitOffset>22</bitOffset>
+                    <bitWidth>2</bitWidth>
+                  </field>
+                  <field>
+                    <name>FZ</name>
+                    <description>Flushing denormalized numbers to zero</description>
+                    <bitOffset>24</bitOffset>
+                    <bitWidth>1</bitWidth>
+                  </field>
+                  <field>
+                    <name>DN</name>
+                    <description>Default NaN for NaN propagation</description>
+                    <bitOffset>25</bitOffset>
+                    <bitWidth>1</bitWidth>
+                  </field>
+                  <field>
+                    <name>AHP</name>
+                    <description>Alternative half-precision control bit</description>
+                    <bitOffset>26</bitOffset>
+                    <bitWidth>1</bitWidth>
+                  </field>
+                </fields>
+              </register>
+              <register>
+                <name>FPSR</name>
+                <description>Floating point status register</description>
+                <Index>50</Index>
+                <fields>
+                  <field>
+                    <name>IOC</name>
+                    <description>Invalid Operation cumulative FP exception bit</description>
+                    <bitOffset>0</bitOffset>
+                    <bitWidth>1</bitWidth>
+                  </field>
+                  <field>
+                    <name>DZC</name>
+                    <description>Divide by zero cumulative FP exception bit</description>
+                    <bitOffset>1</bitOffset>
+                    <bitWidth>1</bitWidth>
+                  </field>
+                  <field>
+                    <name>OFC</name>
+                    <description>Overflow cumulative FP exception bit</description>
+                    <bitOffset>2</bitOffset>
+                    <bitWidth>1</bitWidth>
+                  </field>
+                  <field>
+                    <name>UFC</name>
+                    <description>Underflow cumulative FP exception bit</description>
+                    <bitOffset>3</bitOffset>
+                    <bitWidth>1</bitWidth>
+                  </field>
+                  <field>
+                    <name>IXC</name>
+                    <description>Inexact cumulative FP exception bit</description>
+                    <bitOffset>4</bitOffset>
+                    <bitWidth>1</bitWidth>
+                  </field>
+                  <field>
+                    <name>IDC</name>
+                    <description>Input Denormal cumulative FP exception bit</description>
+                    <bitOffset>7</bitOffset>
+                    <bitWidth>1</bitWidth>
+                  </field>
+                  <field>
+                    <name>QC</name>
+                    <description>Cumulative saturation bit</description>
+                    <bitOffset>27</bitOffset>
+                    <bitWidth>1</bitWidth>
+                  </field>
+                  <field>
+                    <name>V</name>
+                    <description>Overflow condition flag</description>
+                    <bitOffset>28</bitOffset>
+                    <bitWidth>1</bitWidth>
+                  </field>
+                  <field>
+                    <name>C</name>
+                    <description>Carry condition flag</description>
+                    <bitOffset>29</bitOffset>
+                    <bitWidth>1</bitWidth>
+                  </field>
+                  <field>
+                    <name>Z</name>
+                    <description>Zero condition flag</description>
+                    <bitOffset>30</bitOffset>
+                    <bitWidth>1</bitWidth>
+                  </field>
+                  <field>
+                    <name>N</name>
+                    <description>Negative condition flag</description>
+                    <bitOffset>31</bitOffset>
+                    <bitWidth>1</bitWidth>
+                  </field>
+                </fields>
+              </register>
+            </registers>
+            <groups>
+              <group>
+                <name>Double</name>
+                <description>Double Precision Floating Point Registers</description>
+                <size>64</size>
+                <access>RW</access>
+                <type>double</type>
+                <registers>
+                  <register>
+                    <name>D0</name>
+                    <description>Floating point register 0</description>
+                    <Index>51</Index>
+                  </register>
+                  <register>
+                    <name>D1</name>
+                    <description>Floating point register 1</description>
+                    <Index>53</Index>
+                  </register>
+                  <register>
+                    <name>D2</name>
+                    <description>Floating point register 2</description>
+                    <Index>55</Index>
+                  </register>
+                  <register>
+                    <name>D3</name>
+                    <description>Floating point register 3</description>
+                    <Index>57</Index>
+                  </register>
+                  <register>
+                    <name>D4</name>
+                    <description>Floating point register 4</description>
+                    <Index>59</Index>
+                  </register>
+                  <register>
+                    <name>D5</name>
+                    <description>Floating point register 5</description>
+                    <Index>61</Index>
+                  </register>
+                  <register>
+                    <name>D6</name>
+                    <description>Floating point register 6</description>
+                    <Index>63</Index>
+                  </register>
+                  <register>
+                    <name>D7</name>
+                    <description>Floating point register 7</description>
+                    <Index>65</Index>
+                  </register>
+                  <register>
+                    <name>D8</name>
+                    <description>Floating point register 8</description>
+                    <Index>67</Index>
+                  </register>
+                  <register>
+                    <name>D9</name>
+                    <description>Floating point register 9</description>
+                    <Index>69</Index>
+                  </register>
+                  <register>
+                    <name>D10</name>
+                    <description>Floating point register 10</description>
+                    <Index>71</Index>
+                  </register>
+                  <register>
+                    <name>D11</name>
+                    <description>Floating point register 11</description>
+                    <Index>73</Index>
+                  </register>
+                  <register>
+                    <name>D12</name>
+                    <description>Floating point register 12</description>
+                    <Index>75</Index>
+                  </register>
+                  <register>
+                    <name>D13</name>
+                    <description>Floating point register 13</description>
+                    <Index>77</Index>
+                  </register>
+                  <register>
+                    <name>D14</name>
+                    <description>Floating point register 14</description>
+                    <Index>79</Index>
+                  </register>
+                  <register>
+                    <name>D15</name>
+                    <description>Floating point register 15</description>
+                    <Index>81</Index>
+                  </register>
+                  <register>
+                    <name>D16</name>
+                    <description>Floating point register 16</description>
+                    <Index>83</Index>
+                  </register>
+                  <register>
+                    <name>D17</name>
+                    <description>Floating point register 17</description>
+                    <Index>85</Index>
+                  </register>
+                  <register>
+                    <name>D18</name>
+                    <description>Floating point register 18</description>
+                    <Index>87</Index>
+                  </register>
+                  <register>
+                    <name>D19</name>
+                    <description>Floating point register 19</description>
+                    <Index>89</Index>
+                  </register>
+                  <register>
+                    <name>D20</name>
+                    <description>Floating point register 20</description>
+                    <Index>91</Index>
+                  </register>
+                  <register>
+                    <name>D21</name>
+                    <description>Floating point register 21</description>
+                    <Index>93</Index>
+                  </register>
+                  <register>
+                    <name>D22</name>
+                    <description>Floating point register 22</description>
+                    <Index>95</Index>
+                  </register>
+                  <register>
+                    <name>D23</name>
+                    <description>Floating point register 23</description>
+                    <Index>97</Index>
+                  </register>
+                  <register>
+                    <name>D24</name>
+                    <description>Floating point register 24</description>
+                    <Index>99</Index>
+                  </register>
+                  <register>
+                    <name>D25</name>
+                    <description>Floating point register 25</description>
+                    <Index>101</Index>
+                  </register>
+                  <register>
+                    <name>D26</name>
+                    <description>Floating point register 26</description>
+                    <Index>103</Index>
+                  </register>
+                  <register>
+                    <name>D27</name>
+                    <description>Floating point register 27</description>
+                    <Index>105</Index>
+                  </register>
+                  <register>
+                    <name>D28</name>
+                    <description>Floating point register 28</description>
+                    <Index>107</Index>
+                  </register>
+                  <register>
+                    <name>D29</name>
+                    <description>Floating point register 29</description>
+                    <Index>109</Index>
+                  </register>
+                  <register>
+                    <name>D30</name>
+                    <description>Floating point register 30</description>
+                    <Index>111</Index>
+                  </register>
+                  <register>
+                    <name>D31</name>
+                    <description>Floating point register 31</description>
+                    <Index>113</Index>
+                  </register>
+                </registers>
+              </group>
+              <group>
+                <name>Single</name>
+                <description>Single Precision Floating Point Registers</description>
+                <size>32</size>
+                <access>RW</access>
+                <type>float</type>
+                <registers>
+                  <register>
+                    <name>S0</name>
+                    <description>Floating point register 0</description>
+                    <Index>51</Index>
+                  </register>
+                  <register>
+                    <name>S1</name>
+                    <description>Floating point register 1</description>
+                    <Index>53</Index>
+                  </register>
+                  <register>
+                    <name>S2</name>
+                    <description>Floating point register 2</description>
+                    <Index>55</Index>
+                  </register>
+                  <register>
+                    <name>S3</name>
+                    <description>Floating point register 3</description>
+                    <Index>57</Index>
+                  </register>
+                  <register>
+                    <name>S4</name>
+                    <description>Floating point register 4</description>
+                    <Index>59</Index>
+                  </register>
+                  <register>
+                    <name>S5</name>
+                    <description>Floating point register 5</description>
+                    <Index>61</Index>
+                  </register>
+                  <register>
+                    <name>S6</name>
+                    <description>Floating point register 6</description>
+                    <Index>63</Index>
+                  </register>
+                  <register>
+                    <name>S7</name>
+                    <description>Floating point register 7</description>
+                    <Index>65</Index>
+                  </register>
+                  <register>
+                    <name>S8</name>
+                    <description>Floating point register 8</description>
+                    <Index>67</Index>
+                  </register>
+                  <register>
+                    <name>S9</name>
+                    <description>Floating point register 9</description>
+                    <Index>69</Index>
+                  </register>
+                  <register>
+                    <name>S10</name>
+                    <description>Floating point register 10</description>
+                    <Index>71</Index>
+                  </register>
+                  <register>
+                    <name>S11</name>
+                    <description>Floating point register 11</description>
+                    <Index>73</Index>
+                  </register>
+                  <register>
+                    <name>S12</name>
+                    <description>Floating point register 12</description>
+                    <Index>75</Index>
+                  </register>
+                  <register>
+                    <name>S13</name>
+                    <description>Floating point register 13</description>
+                    <Index>77</Index>
+                  </register>
+                  <register>
+                    <name>S14</name>
+                    <description>Floating point register 14</description>
+                    <Index>79</Index>
+                  </register>
+                  <register>
+                    <name>S15</name>
+                    <description>Floating point register 15</description>
+                    <Index>81</Index>
+                  </register>
+                  <register>
+                    <name>S16</name>
+                    <description>Floating point register 16</description>
+                    <Index>83</Index>
+                  </register>
+                  <register>
+                    <name>S17</name>
+                    <description>Floating point register 17</description>
+                    <Index>85</Index>
+                  </register>
+                  <register>
+                    <name>S18</name>
+                    <description>Floating point register 18</description>
+                    <Index>87</Index>
+                  </register>
+                  <register>
+                    <name>S19</name>
+                    <description>Floating point register 19</description>
+                    <Index>89</Index>
+                  </register>
+                  <register>
+                    <name>S20</name>
+                    <description>Floating point register 20</description>
+                    <Index>91</Index>
+                  </register>
+                  <register>
+                    <name>S21</name>
+                    <description>Floating point register 21</description>
+                    <Index>93</Index>
+                  </register>
+                  <register>
+                    <name>S22</name>
+                    <description>Floating point register 22</description>
+                    <Index>95</Index>
+                  </register>
+                  <register>
+                    <name>S23</name>
+                    <description>Floating point register 23</description>
+                    <Index>97</Index>
+                  </register>
+                  <register>
+                    <name>S24</name>
+                    <description>Floating point register 24</description>
+                    <Index>99</Index>
+                  </register>
+                  <register>
+                    <name>S25</name>
+                    <description>Floating point register 25</description>
+                    <Index>101</Index>
+                  </register>
+                  <register>
+                    <name>S26</name>
+                    <description>Floating point register 26</description>
+                    <Index>103</Index>
+                  </register>
+                  <register>
+                    <name>S27</name>
+                    <description>Floating point register 27</description>
+                    <Index>105</Index>
+                  </register>
+                  <register>
+                    <name>S28</name>
+                    <description>Floating point register 28</description>
+                    <Index>107</Index>
+                  </register>
+                  <register>
+                    <name>S29</name>
+                    <description>Floating point register 29</description>
+                    <Index>109</Index>
+                  </register>
+                  <register>
+                    <name>S30</name>
+                    <description>Floating point register 30</description>
+                    <Index>111</Index>
+                  </register>
+                  <register>
+                    <name>S31</name>
+                    <description>Floating point register 31</description>
+                    <Index>113</Index>
+                  </register>
+                </registers>
+              </group>
+            </groups>
+          </group>
+        </groups>
+      </group>
+    </groups>
+  </cpu>
+</device>
+

@@ -1,0 +1,124 @@
+# /*********************************************************************
+# *                     SEGGER Microcontroller GmbH                    *
+# *                        The Embedded Experts                        *
+# **********************************************************************
+# *                                                                    *
+# *       (c) 1995 - 2019 SEGGER Microcontroller GmbH                  *
+# *                                                                    *
+# *       Internet: segger.com  Support: support_embos@segger.com      *
+# *                                                                    *
+# **********************************************************************
+# *                                                                    *
+# *       Zephyr OS                                                    *
+# *                                                                    *
+# *       Please note:                                                 *
+# *                                                                    *
+# **********************************************************************
+#
+# -------------------------- END-OF-HEADER -----------------------------
+# File    : SYSVIEW_Zephyr.txt
+# Purpose : Zephyr OS description file for SEGGER SystemView.
+#           Please copy this file to your SystemView installation folder,
+#           e.g. c:\Program Files\SEGGER\SystemView_V250\Description\.
+# */
+
+#Reversed Thread priority lower vlaue -> higher priority
+Option    ReversePriority
+#
+# Types for parameter formatters
+#
+NamedType Bool          0=false 1=true
+
+NamedType TimeOut       *="%u Ticks" 0=TIMEOUT_NO_WAIT 4294967295=FOREVER
+
+NamedType ErrCodePosix  *=%i 0=ESUCCESS  -1=EPERM        -2=ENOENT       -3=ESRCH         -4=EINTR            -5=EIO              -6=ENXIO       -7=E2BIG         -8=ENOEXEC       -9=EBADF       -10=ECHILD         -11=EAGAIN       -12=ENOMEM   -13=EACCES -14=EFAULT -15=ENOTEMPTY    -16=EBUSY   -17=EEXIST -18=EXDEV -19=ENODEV -20=ENOTDIR -21=EISDIR -22=EINVAL -23=ENFILE -24=EMFILE -25=ENOTTY -26=ENAMETOOLONG -27=EFBIG -28=ENOSPC -29=ESPIPE -30=EROFS -31=EMLINK -32=EPIPE -33=EDEADLK -34=ENOLCK -35=ENOTSUP -36=EMSGSIZE -72=ECANCELED -81=ERRMAX
+NamedType ErrCodeMath   *=%i 0=ESUCCESS -37=EDOM         -38=ERANGE
+NamedType ErrCodeNetArg *=%i 0=ESUCCESS -40=EDESTADDRREQ -41=EPROTOTYPE -42=ENOPROTOOPT  -43=EPROTONOSUPPORT -44=ESOCKTNOSUPPORT -45=EOPNOTSUPP -46=EPFNOSUPPORT -47=EAFNOSUPPORT -48=EADDRINUSE   -49=EADDRNOTAVAIL -50=ENOTSOCK
+NamedType ErrCodeNetOps *=%i 0=ESUCCESS -51=ENETUNREACH -52=ENETRESET   -53=ECONNABORTED -54=ECONNRESET      -55=ENOBUFS         -56=EISCONN    -57=ENOTCONN     -58=ESHUTDOWN    -59=ETOOMANYREFS -60=ETIMEDOUT     -61=ECONNREFUSED -62=ENETDOWN -63=ETXTBSY -64=ELOOP -65=EHOSTUNREACH -66=ENOTBLK -67=EHOSTDOWN
+NamedType ErrCodeNetIO  *=%i 0=ESUCCESS -68=EINPROGRESS -69=EALREADY    -11=EWOULDBLOCK  -71=ENOSYS
+NamedType ErrCodeStream *=%i 0=ESUCCESS -74=ENOSR       -75=ENOSTR      -76=EPROTO       -77=EBADMSG         -78=ENODATA         -79=ETIME      -80=ENOMSG      -138=EILSEQ
+NamedType ErrCodeMsg    *=%i 0=ESUCCESS -11=EAGAIN      -80=ENOMSG
+
+#
+# Task States
+#
+TaskState 0xBF 1=dummy, 2=Waiting, 4=New, 8=Terminated, 16=Suspended, 32=Terminating, 128=Ready
+
+#
+# API Functions
+#
+32  k_sched_lock
+33  k_sched_unlock
+34  k_busy_wait                Timeout=%u us
+
+35  irq_enable                 irq=%u
+36  irq_disable                irq=%u
+
+37  k_mutex_init               mutex=%I                                                                                        | Returns %ErrCodePosix
+38  k_mutex_unlock             mutex=%I                                                                                        | Returns %ErrCodePosix
+39  k_mutex_lock               mutex=%I, %TimeOut                                                                              | Returns %ErrCodePosix
+
+40  k_sem_init                 sem=%I, initial_count=%u, limit=%u                                                              | Returns %ErrCodePosix
+41  k_sem_give                 sem=%I                                                                                          | Returns %ErrCodePosix
+42  k_sem_take                 sem=%I, Timeout=%TimeOut                                                                        | Returns %ErrCodePosix
+
+43  k_queue_init               q=%I
+44  k_queue_append             q=%I, data=%p                                                                                   | Returns (void)(%ErrCodePosix)
+45  k_queue_alloc_append       q=%I, data=%p                                                                                   | Returns %ErrCodePosix
+46  k_queue_prepend            q=%I, data=%p                                                                                   | Returns (void)(%ErrCodePosix)
+47  k_queue_alloc_prepend      q=%I, data=%p                                                                                   | Returns %ErrCodePosix
+48  k_queue_insert             q=%I, data=%p                                                                                   | Returns (void)(%ErrCodePosix)
+49  k_queue_append_list        q=%I, head=%p, tail=%p                                                                          | Returns %ErrCodePosix
+50  k_queue_get                q=%I, Timeout=%TimeOut                                                                          | Returns %p
+51  k_queue_remove             q=%I, data=%p                                                                                   | Returns &Bool
+52  k_queue_cancel_wait        q=%I
+53  k_queue_peek_head          q=%I                                                                                            | Returns %p
+54  k_queue_peek_tail          q=%I                                                                                            | Returns %p
+
+55  k_stack_init               stack=%I, buffer=%p, num_entries=%u
+56  k_stack_push               stack=%I, data=%p                                                                               | Returns %ErrCodePosix
+57  k_stack_pop                stack=%I, data=%p, Timeout=%TimeOut                                                             | Returns %ErrCodePosix
+58  k_stack_cleanup            stack=%I                                                                                        | Returns %ErrCodePosix
+
+59  k_msgq_init                msgq=%I, buffer=%p, msg_size=%u, max_msgs=%us
+60  k_msgq_put                 msgq=%I, data=%p, Timeout=%TimeOut                                                              | Returns %ErrCodeMsg
+61  k_msgq_get                 msgq=%I, data=%p, Timeout=%TimeOut                                                              | Returns %ErrCodeMsg
+62  k_msgq_cleanup             msgq=%I                                                                                         | Returns %ErrCodePosix
+63  k_msgq_peek                msgq=%I, data=%p                                                                                | Returns %ErrCodeMsg
+64  k_msgq_purge               msgq=%I
+
+65  k_mbox_init                mbox=%I
+66  k_mbox_put                 mbox=%I, tx_msg=%p, Timeout=%TimeOut                                                            | Returns %ErrCodeMsg
+67  k_mbox_async_put           mbox=%I, tx_msg=%p, sem=%I                                                                      | Returns (void)(%ErrCodeMsg)
+68  k_mbox_get                 mbox=%I, rx_msg=%p, buffer=%p, Timeout=%TimeOut                                                 | Returns %ErrCodeMsg
+69  k_mbox_data_get            rx_msg=%p, buffer=%p
+70  k_mbox_data_block_get      rx_msg=%p, pool=%p, block=%p,  Timeout=%TimeOut                                                 | Returns %ErrCodePosix
+
+71  k_pipe_init                pipe=%I, buffer=%p, size=%u
+72  k_pipe_cleanup             pipe=%I                                                                                         | Returns %ErrCodePosix
+73  k_pipe_put                 pipe=%I, data=%p, bytes_to_write=%u, bytes_written=%u, min_xfer=%u, Timeout=%TimeOut            | Returns %ErrCodePosix
+74  k_pipe_get                 pipe=%I, data=%p, bytes_to_read=%u, bytes_read=%u, min_xfer=%u, Timeout=%TimeOut                | Returns %ErrCodePosix
+75  k_pipe_block_put           pipe=%I, block=%p, bytes_to_write=%u, sem=%I                                                    | Returns (void)(%ErrCodePosix)
+
+76  k_heap_init                heap=%I, mem=%p, bytes=%u
+77  k_heap_alloc               heap=%I, bytes=%u, Timeout=%TimeOut                                                             | Returns %p
+78  k_heap_free                heap=%I, mem=%p
+79  k_mem_pool_alloc           pool=%I, block=%p, size=%u, Timeout=%TimeOut                                                    | Returns %ErrCodePosix
+80  k_mem_pool_malloc          pool=%I, size=%u                                                                                | Returns %p
+81  k_mem_pool_free            block=%p
+82  k_mem_pool_free_id         id=%p
+
+83  z_thread_malloc            size=%u                                                                                         | Returns %p
+
+84  k_mem_slab_init            slab=%I, buffer=%p, bock_size=%u, num_blocks=%u                                                 | Returns ErrCodePosix
+85  k_slab_alloc               slab=%I, mem=%p, Timeout=%TimeOut                                                               | Returns %ErrCodePosix
+86  k_slab_free                slab=%I, mem=%p
+
+87  k_timer_init               timer=%I, expiry_fn=%I, stop_fn=%I
+88  k_timer_start              timer=%I, duration=%TimeOut, period=%u Ticks
+89  k_timer_stop               timer=%I
+90  k_timer_status_sync        timer=%I
+91  k_timer_user_data_set      timer=%I, user_data=%p
+92  k_timer_user_data_get      timer=%I                                                                                        | Returns %p
+93  timer->expiry_fn           timer=%I
+94  timer->stop_fn             timer=%I
